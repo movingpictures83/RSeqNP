@@ -12,4 +12,6 @@ gamma=NULL, outcome=c(rep(1,10), rep(2,10)),
 nperm=1e5, seed=100, exp.mean=0.5, low.exp=0.5)
 gene.DE.res=result$gene.DE.result
 volcano.plot(gene.DE.res, filter=F, xlim=c(-10,10),pch=20, xlab='Log 2 fold change',ylab=expression(-log~10~italic(p)-value))
+write.csv(gene.DE.res$fdr.BH, paste(outputfile, "csv", sep="."))
+#print(str(gene.DE.res))
 }
